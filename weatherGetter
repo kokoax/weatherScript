@@ -2,10 +2,10 @@
 require 'mysql'
 
 def main( )
-  day    = `date "+%d"`.to_i().to_s().gsub( /\r?\n/, "" )
-  month  = `date "+%m"`.to_i().to_s().gsub( /\r?\n/, "" )
-  monthText  = `LANG=C date "+%B"`.downcase().gsub( /\r?\n/, "" )
-  year   = `date "+%Y"`.to_s().gsub( /\r?\n/, "" )
+  day    = `date "+%d"`.to_i().to_s().gsub( /\R/, "" )
+  month  = `date "+%m"`.to_i().to_s().gsub( /\R/, "" )
+  monthText  = `LANG=C date "+%B"`.downcase().gsub( /\R/, "" )
+  year   = `date "+%Y"`.to_s().gsub( /\R/, "" )
 
   # weather_data = `curl http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/daily-weather-forecast/224170 2> /dev/null`
   url = 'curl "http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/' + monthText + '-weather/224170?monyr=' + month + '/1/' + year + '&view=table#"'
@@ -15,7 +15,7 @@ def main( )
   # puts( weather_data )
 
   tmp = weather_data.scan( /<table cellspacing="0" class="calendar-list">([\s\S]+?)<\/table>/m )
-  #tmp = weather_data.scan( /<tr (?:[\s\S]+?)>([\s\S]+?)<\/tr>/m ).rstrip.split(/\r?\n/).map {|line| line.chomp }
+  #tmp = weather_data.scan( /<tr (?:[\s\S]+?)>([\s\S]+?)<\/tr>/m ).rstrip.split(/\R/).map {|line| line.chomp }
   #tmp = weather_data.scan( /<tr (?:[\s\S]+?)>([\s\S]+?)<\/tr>/m ).join()
   tmp = weather_data.scan( /<tr(?:[\s\S]*?)>([\s\S]+?)<\/tr>/m )
   word = []
