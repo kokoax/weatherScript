@@ -1,17 +1,18 @@
 #!/bin/ruby
 require 'mysql'
+require 'open-uri'
 
 def main( )
   day    = `date "+%d"`.to_i().to_s().gsub( /\R/, "" )
-  month  = `date "+%m"`.to_i().to_s().gsub( /\R/, "" )
-  monthText  = `LANG=C date "+%B"`.downcase().gsub( /\R/, "" )
+  month  = `LC_ALL=C date "+%m"`.to_i().to_s().gsub( /\R/, "" )
+  monthText  = `LC_ALL=C date "+%B"`.downcase().gsub( /\R/, "" )
   year   = `date "+%Y"`.to_s().gsub( /\R/, "" )
 
   # weather_data = `curl http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/daily-weather-forecast/224170 2> /dev/null`
-  url = 'curl "http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/' + monthText + '-weather/224170?monyr=' + month + '/1/' + year + '&view=table#"'
+  url = "http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/#{monthText}-weather/224170?monyr=#{month}/1/#{year}&view=table"
   puts( url )
 
-  weather_data = `#{url} 2> /dev/null`
+  weather_data = open(url).read
   # puts( weather_data )
 
   tmp = weather_data.scan( /<table cellspacing="0" class="calendar-list">([\s\S]+?)<\/table>/m )

@@ -1,4 +1,6 @@
 # usage
+## Installation
+- create user(id:weather,pass:weather) in mysql
 ## weatherGetter script
 The weatherGetter is getting of weather data from accuweather between from this month first to end.
 ```
