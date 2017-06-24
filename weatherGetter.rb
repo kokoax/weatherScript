@@ -30,7 +30,7 @@ def main( )
   time = word.scan( /<time>(.+?)<\/time>/m )
   td   = word.scan( /<td>(.+?)<\/td>/m )
 
-  client = Mysql::new( "127.0.0.1", "kokoax", "yomo4808", "weather" )
+  client = Mysql::new( "127.0.0.1", "weather", "weather", "weather" )
 
   time.length().times{ |i|
     if( i >= day.to_i()-1 )

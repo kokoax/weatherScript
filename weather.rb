@@ -86,7 +86,7 @@ def main( arg )
   nowDate = `#{cmd}`.to_s()
   # puts( nowDate )
 
-  client = Mysql::new( "127.0.0.1", "kokoax", "yomo4808", "weather" )
+  client = Mysql::new( "127.0.0.1", "weather", "weather", "weather" )
 
   if( arg.include?( "-day" ) ) then
     return getDate( nowDate, client )
