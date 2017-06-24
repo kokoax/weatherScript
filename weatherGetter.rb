@@ -1,4 +1,3 @@
-#!/home/kokoax/.rbenv/shims/ruby
 require 'mysql'
 require 'open-uri'
 

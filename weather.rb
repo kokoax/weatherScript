@@ -1,4 +1,3 @@
-#!/home/kokoax/.rbenv/shims/ruby
 require 'mysql'
 
 def getDate( date, client )
