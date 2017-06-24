@@ -1,15 +1,10 @@
 # Installation
-- create user(id:weather,pass:weather) in mysql
-- create weather database.
-- create daily table.
-  - columns
-    - HiLo => verchar(8)
-    - Precip => int(4)
-    - Snow => int(4)
-    - Icono => varchar(4)
-    - Cond => varchar(64)
-    - Avg  => varchar(8)
-    - YMD  => int(8)
+Please execute as root user.
+- ``MariaDB> CREATE DATABASE weather;``
+- ``MariaDB> CREATE TABLE daily(HiLo VHARCHAR(8), Precip INT(4), Snow INT(4), Icon VARCHAR(4), Cond VARCHAR(64), Avg (VHARCHAR(8), YMD int(8));``
+- ``MariaDB> CREATE USER 'weather'@'localhost' IDENTIFIED 'weather';``
+- ``MariaDB> GRANT select,update ON weather.daily TO 'weather'@'localhost';``
+
 # Usage
 
 ## weatherGetter script
@@ -48,7 +43,7 @@ $ ruby weather -(first option) -(second option)
   -ast  :  average small temprature of specific date
 ```
 
-# example
+# Example
 ```
 $ ruby weatherGetter
 ```
