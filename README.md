@@ -14,20 +14,24 @@ $ ruby weather -(first option) -(second option)
 ### options
 #### first option
 - date
-  - 0 is today
-  - 1 is tomorrow
-  - ....
+```
+  -0 is today
+  -1 is tomorrow
+  -2 ....
+```
 #### second option
 - data's kind
-  - day   day of specific date
-  - lt    large temprature of specific date
-  - st    small temprature of specific date
-  - pre   precip probability of specific date
-  - snow  snow probability of specific date
-  - i     number of weather icon in site of accuweather of specific date
-  - c     weather context of specific date
-  - alt   average large temprature of specific date
-  - ast   average small temprature of specific date
+```
+  -day  :  day of specific date
+  -lt   :  large temprature of specific date
+  -st   :  small temprature of specific date
+  -pre  :  precip probability of specific date
+  -snow :  snow probability of specific date
+  -i    :  number of weather icon in site of accuweather of specific date
+  -c    :  weather context of specific date
+  -alt  :  average large temprature of specific date
+  -ast  :  average small temprature of specific date
+```
 
 # example
 ```
