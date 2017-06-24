@@ -1,17 +1,31 @@
-# usage
-## Installation
+# Installation
 - create user(id:weather,pass:weather) in mysql
+- create weather database.
+- create daily table.
+  - columns
+    - HiLo => verchar(8)
+    - Precip => int(4)
+    - Snow => int(4)
+    - Icono => varchar(4)
+    - Cond => varchar(64)
+    - Avg  => varchar(8)
+    - YMD  => int(8)
+# Usage
+
 ## weatherGetter script
 The weatherGetter is getting of weather data from accuweather between from this month first to end.
 ```
 $ ruby weatherGetter
 ```
+
 ## weather script
 The weather is getting of weather data from database got by the weatherGetter.
 ```
 $ ruby weather -(first option) -(second option)
 ```
+
 ### options
+
 #### first option
 - date
 ```
@@ -19,6 +33,7 @@ $ ruby weather -(first option) -(second option)
   -1 is tomorrow
   -2 ....
 ```
+
 #### second option
 - data's kind
 ```
