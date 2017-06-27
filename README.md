@@ -3,7 +3,7 @@ Please execute as root user on mariadb.
 - ``MariaDB> CREATE DATABASE weather;``
 - ``MariaDB> CREATE TABLE weather.daily(HiLo VARCHAR(8), Precip INT(4), Snow INT(4), Icon VARCHAR(4), Cond VARCHAR(64), Avg VARCHAR(8), YMD INT(8));``
 - ``MariaDB> CREATE USER 'weather'@'localhost' IDENTIFIED BY 'weather';``
-- ``MariaDB> GRANT select,update ON weather.daily TO 'weather'@'localhost';``
+- ``MariaDB> GRANT select,update,insert ON weather.daily TO 'weather'@'localhost';``
 
 # Usage
 
