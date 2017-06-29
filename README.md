@@ -46,7 +46,7 @@ $ ruby weather.rb -(first option) -(second option)
 
 # Example
 ```
-$ ruby weatherGetter
+$ W_CITY=morioka-shi ruby weatherGetter.rb
 ```
 When, weather data store to your database(using mysql).
 After you exec of
