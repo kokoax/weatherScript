@@ -2,8 +2,8 @@ require 'mysql'
 require 'open-uri'
 
 def get_weather(month, month_text, year)
-  # weather_data = `curl http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/daily-weather-forecast/224170 2> /dev/null`
-  url = "http://slate-dev.accuweather.com/en/jp/morioka-shi/224170/#{month_text}-weather/224170?monyr=#{month}/1/#{year}&view=table"
+  city = `echo $W_CITY`.gsub(/\R/, "")
+  url = %(http://slate-dev.accuweather.com/en/jp/#{city}/224170/#{month_text}-weather/224170?monyr=#{month}/1/#{year}&view=table)
   puts( url )
 
   weather_data = open(url).read
