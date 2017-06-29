@@ -9,14 +9,15 @@ Please execute as root user on mariadb.
 
 ## weatherGetter script
 The weatherGetter is getting of weather data from accuweather between from this month first to end.
+Find city_name from http://www.accuweather.com/en/jp/japan-weather
 ```
-$ ruby weatherGetter
+$ W_CITY=$(city_name) ruby weatherGetter.rb
 ```
 
 ## weather script
 The weather is getting of weather data from database got by the weatherGetter.
 ```
-$ ruby weather -(first option) -(second option)
+$ ruby weather.rb -(first option) -(second option)
 ```
 
 ### options
