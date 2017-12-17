@@ -3,7 +3,7 @@ require 'open-uri'
 
 def get_weather(month, month_text, year)
   city = `echo $W_CITY`.gsub(/\R/, "")
-  url = %(http://slate-dev.accuweather.com/en/jp/#{city}/224170/#{month_text}-weather/224170?monyr=#{month}/1/#{year}&view=table)
+  url = %(https://www.accuweather.com/en/jp/#{city}/224170/#{month_text}-weather/224170?monyr=#{month}/1/#{year}&view=table)
   puts( url )
 
   weather_data = open(url).read
